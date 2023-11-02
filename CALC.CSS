@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  }
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  }
+
+body {
+  --bg-color: #edf1f4;
+  --outer-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px #fff;
+  --inner-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 20px #fff;
+  --border: 2px solid #edf1f4;
+  --text-color: rgb(9, 1, 1);
+  --switch-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px -2px 5px #fff;
+  --indicator-color: #cecece;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  --display-color:rgb(1, 1, 1);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ label::after {
+  transform: translate(calc(80px - 35px - 10px), -50%);
+}
+
+.calc {
+  width: 350px;
+  padding: 1rem;
+  border-radius: 10%;
+  box-shadow: var(--outer-shadow);
+}
+
+.calc .buttons {
+  display: grid;
+}
+
+.calc .buttons h2#display {
+  grid-column: span 4;
+  user-select: none;
+  overflow: none;
+  width: 100%;
+  text-align: end;
+  color: #10e3ff;
+  height: 100px;
+  line-height: 100px;
+  box-shadow: var(--inner-shadow);
+  margin-bottom: 1.2rem;
+  padding: 0 20px;
+  font-size: 2em;
+  font-weight: 900;
+  border-radius: 2rem;
+}
+.calc .buttons span {
+  padding: 10px;
+  margin: 10px;
+  box-shadow: var(--outer-shadow);
+  cursor: pointer;
+  user-select: none;
+  min-width: 50px;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15.50px;
+  color: var(--text-color);
+  font-weight: bolder;
+  border: var(--border);
+  border-radius: 100%;
+}
+
+.calc .buttons span:active {
+  box-shadow: var(--inner-shadow);
+  color: rgb(254, 254, 254);
+  background-color: #6bed4b;
+}
+.calc .buttons span#clear:active {
+    box-shadow: var(--inner-shadow);
+    color: rgb(254, 254, 254);
+    background-color: #4b6eed;
+  }
+  .calc .buttons span#equal:active {
+    box-shadow: var(--inner-shadow);
+    color: rgb(254, 254, 254);
+    background-color: #4b6eed;
+  }
+.calc .buttons span#clear {
+  border-radius: 25%;
+
+}
+.calc .buttons span#equal {
+  grid-row: span 2;
+  border-radius: 25%;
+}
+
+.calc .buttons span#add:active, .calc .buttons span#multi:active, 
+.calc .buttons span#divide:active, .calc .buttons span#lesse:active,
+.calc .buttons span#great:active, .calc .buttons span#mod:active, 
+.calc .buttons span#deci:active, .calc .buttons span#sub:active{
+  box-shadow: var(--inner-shadow);
+  color: rgb(254, 254, 254);
+  background-color: red;
+
+}
